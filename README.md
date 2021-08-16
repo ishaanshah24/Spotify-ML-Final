@@ -1,5 +1,5 @@
 # Predicting Song Popularity on Spotify (and creating a song and artist recommender!)
-Being a huge fan of music, this project allowed me to explore the different features that contribute to a song's popularity and help predict popularity too. I also created a song and artist recommender using the dataset.
+Being a huge fan of music, this project allowed me to explore the different features that contribute to a song's popularity and help predict popularity too. I also created a song and artist recommender using the dataset. I ended up creating a model with around ~68% accuracy and discovered that a song's popularity is more random than we think it is. There are a lot more external factors than just the song's features that make a popular song. At the end, I created a song and artist recommender for me to find new music.
 
 ## Project Overview
 I spend over 2 hours everyday on Spotify listening to music, creating playlists, and finding new artists. Music helps bring happiness and calmness to my life. Hence, I set out to explore what makes a song and what makes a song popular. My goal was to determine the most influential factors on a song's popularity, and then leverage machine learning to determine an algorithm that will best predict a song’s success. I also planned on using machine learning to create a recommendation system to help me discover new songs and artists. The main language for this project was Python. 
@@ -91,7 +91,7 @@ It seems as if mode, tempo, time-signature, and key were unimportant, while acou
 
 Regression was pretty unsuccesful in predicting popularity. So, I created a new variable - `is_popular` and attempted classification on the dataset. However, the first problem was that the new training dataset was heavily imbalanced. Approximately 90% of the dataset fell in one class and the other 10% in the other class. Hence, when I ran logistic regression model on it, I received a pretty high accuracy of 0.901. This was because all the data was classified as only one class and hence it painted a false picture. Hence, I had to tackle the problem of imbalanced classes.
 
-As this was a large dataset, I decided to randomly undersample the data. This means that points were randomly selected from the majority class until there were the same number of points as the minority class. Now the classes are balanced.
+As this was a large dataset, I decided to randomly undersample the data. This means that points were randomly selected from the majority class until there were the same number of points as the minority class. Now the classes are balanced. (Oversampling was tried too, however I achieved better results with under sampling and models took way lesser time to run too).
 
 #### Logistic Regression
 Logisitic Regression is used to classify data into two or more classes with the help of a sigmoid function. On the undersampled dataset, the logistic regression model returned an accuracy of 0.58 (which means 58% of points were correctly classified). However the precision score was only 0.16 which means that only 16% of points that were predicted to be popular, were actually popular.
@@ -119,6 +119,6 @@ This task was fun and challenging. It looks like a song's popularity depends on 
 
 Through this journey I got the chance to build on my Python skills and get more comfortable with the Pandas, Plotly, Matplotlib and Sci-Kit Learn libraries. I also better understood the math behind these models and why they work in certain ways. I learnt which models are computationally expensive and which aren't, giving me a clearer idea of which models to use for a dataset in the future. Moreover, I learnt to deal with imbalanced datasets too. 
 
-Some next steps would be to deploy the song and artist recommender so that more people can use it and improve their playlists! I would also try and re-run my models using fewer genres by eliminating genres that are not musical such as Comedy.
+Some next steps would be to deploy the song and artist recommender so that more people can use it and improve their playlists! I would also try and re-run my models using fewer genres by eliminating genres that are not musical such as Comedy. 
 
 If you have read so far, hope you enjoyed and learned something! 🎶👏
